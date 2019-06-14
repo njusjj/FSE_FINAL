@@ -44,13 +44,14 @@ def heapAdjust(A, i, length):
 def findKmin(A, k, length):
     for i in range(int(k / 2))[::-1]:
         heapAdjust(A, i, k)
-    #print('The heap is :', A[:k])
     for i in range(k, length):
         if A[i] < A[0]:
             A[i], A[0] = A[0], A[i]
             heapAdjust(A, 0, k)
     res=A[:k]
-    print('The result is :', res)
+    new=res[:]
+    new.sort()
+    print('The result is :', new)
 
 
 lens = len(result)
