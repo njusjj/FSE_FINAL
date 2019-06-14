@@ -1,11 +1,12 @@
 
-def dfs(x, y, p,grid):
+def dfs(x, y, p, grid):
     if not (0 <= x < row and 0 <= y < col and grid[x][y] >= 0):
         return 0
     if end == (x, y) and p == 0:
         return 1
     grid[x][y] = -1
-    res = dfs(x + 1, y, p - 1,grid) + dfs(x, y + 1, p - 1,grid) + dfs(x - 1, y, p - 1,grid) + dfs(x, y - 1, p - 1,grid)
+    res = dfs(x + 1, y, p - 1, grid) + dfs(x, y + 1, p - 1, grid) + \
+        dfs(x - 1, y, p - 1, grid) + dfs(x, y - 1, p - 1, grid)
     grid[x][y] = 0
     return res
 
